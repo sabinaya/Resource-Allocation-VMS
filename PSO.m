@@ -7,8 +7,6 @@ virtualMachineResources_2 = [20,30,1,50];
 number_of_physical_machines = length(physicalMachineResources_1);
 number_of_virtual_machines = length(virtualMachineResources_2);
 
-
-
 allocation_matrix_1 = (permute_repetitions([1:number_of_physical_machines],number_of_virtual_machines));
 
 row_count = 1;
@@ -32,20 +30,17 @@ endwhile
 
 velocity_matrix_1 = (permute_repetitions([0,0,0,0,0,0,0,0,0,0],4));
 
-%disp("Allocation Matrix");
-%disp(allocation_matrix_1);
-
-%disp("RBF Matrix");
-%disp(rbf_matrix_1);
-
-%disp("Initial Global Best");
-%disp(global_best_1);
-
-
+disp("Allocation Matrix");
+disp(allocation_matrix_1);
+disp("RBF Matrix");
+disp(rbf_matrix_1);
+disp("Initial Global Best");
+disp(global_best_1);
 
 %|-----------------------------------------------------Population II Generation ------------------------------------------------------------|%
 %|Implementation of Particle Swarm Optimization to get the best allocation of Virtual machine Resources in Physical Machine-----------------|%
 %|------------------------------------------------------------------------------------------------------------------------------------------|%
+
 sorted_position_matrix_final = (permute_repetitions([0,0,0,0,0,0,0,0,0,0],4));
 sorted_position_matrix_index_final = (permute_repetitions([0,0,0,0,0,0,0,0,0,0],4));
 sorted_position_matrix_2 = [];
@@ -71,11 +66,10 @@ while(row_count <= length(allocation_matrix_1))
    row_count++;
 endwhile
 
-%disp("Velocity Matrix 2");
-%disp(velocity_matrix_2);
-
-%disp("Position Matrix 2");
-%disp(position_matrix_2);
+disp("Velocity Matrix 2");
+disp(velocity_matrix_2);
+disp("Position Matrix 2");
+disp(position_matrix_2);
 
 row_count=1;
 global_best_2 = global_best_1;
@@ -97,14 +91,12 @@ while(row_count <= length(allocation_matrix_1))
    row_count++;
 endwhile
 
-%disp("RBF Matrix 2");
-%disp(rbf_matrix_2);
-
-%disp("Global Best Value 2");
-%disp(global_best_2);
-
-%disp("Allocation Matrix After Shuffle");
-%disp(allocation_matrix_2);
+disp("RBF Matrix 2");
+disp(rbf_matrix_2);
+disp("Global Best Value 2");
+disp(global_best_2);
+disp("Allocation Matrix After Shuffle");
+disp(allocation_matrix_2);
 
 
 %|-----------------------------------------------------Population III -n Generation ---------------------------------------------------------|%
@@ -163,7 +155,6 @@ endwhile
 
 disp("Global Best");
 disp(global_best_final);
-
 disp("Final Allocation");
 disp(finalAllocation);
 
