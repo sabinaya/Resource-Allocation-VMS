@@ -24,6 +24,6 @@
 function [skewness] = skewnessRBF (cpu, ram)
   averagePMTotalResources = (cpu+ram)/2;  
   skewFactor_one =(cpu/averagePMTotalResources-1)^2;
-  skewFactor_two =(cpu/averagePMTotalResources-1)^2;
+  skewFactor_two =(ram/averagePMTotalResources-1)^2;
   skewness = sqrt(skewFactor_one+skewFactor_two);
 endfunction
